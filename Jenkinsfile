@@ -3,7 +3,16 @@ pipeline {
   stages {
     stage('error') {
       steps {
-        echo 'hello'
+        parallel(
+          "error": {
+            echo 'hello'
+            
+          },
+          "foo": {
+            echo 'foo2'
+            
+          }
+        )
       }
     }
   }
