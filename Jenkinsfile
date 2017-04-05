@@ -10,14 +10,23 @@ pipeline {
       steps {
         parallel(
           "ansible show version": {
-            sh 'ansible --version'
+            sh 'ls -la'
             
           },
           "ls": {
-            sh 'ls -la'
+            echo 'test'
+            
+          },
+          "sleep": {
+            sleep 2
             
           }
         )
+      }
+    }
+    stage('ende') {
+      steps {
+        echo 'end'
       }
     }
   }
