@@ -1,10 +1,5 @@
 pipeline {
-  agent {
-    docker {
-      image 'rndmh3ro/docker-centos7-ansible-latest'
-    }
-    
-  }
+  agent none
   stages {
     stage('test') {
       steps {
