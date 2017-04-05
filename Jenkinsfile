@@ -1,15 +1,20 @@
 pipeline {
-  agent none
+  agent {
+    docker {
+      image 'rndmh3ro/docker-centos7-ansible-latest'
+    }
+    
+  }
   stages {
-    stage('error') {
+    stage('test') {
       steps {
         parallel(
-          "error": {
-            echo 'hello'
+          "ansible show version": {
+            sh 'ansible --version'
             
           },
-          "foo": {
-            echo 'foo2'
+          "ls": {
+            sh 'ls -la'
             
           }
         )
