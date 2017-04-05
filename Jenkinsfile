@@ -1,7 +1,7 @@
 pipeline {
   agent {
     docker {
-      image 'rndmh3ro/docker-centos7-ansible-latest'
+      image 'rndmh3ro/docker-centos7-ansible'
     }
     
   }
