@@ -14,7 +14,7 @@ pipeline {
             
           },
           "ls": {
-            echo 'test'
+            echo 'test123'
             
           },
           "sleep": {
